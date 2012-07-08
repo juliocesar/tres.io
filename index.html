@@ -11,41 +11,30 @@
     <link rel="stylesheet" href="/css/tres.io.css">
   </head>
   <body>
-    <script type="text/template" id="home-template">
-      <h1 id="logo">
-        <span>(</span>Anagen<span>)</span>
-      </h1>
-      <form action="#" method="post">
-        <input type="text" capitalize="off" id="query" name="query" placeholder="Wikipedia search">
-      </form>
-      <p>
-        This app was built using <a href="http://tres.io" class="outlink">Tres</a>
-      </p>
-    </script>
-    <script type="text/template" id="search-template">
-      <header class="fixed">
-        <a href="" class="icon-search left"></a>
-        <h1></h1>
-      </header>
-      <ul class="common"></ul>
-    </script>
-    <script type="text/template" id="article-template">
-      <header class="fixed">
-        <a class="back"></a>
-        <h1><%= get('displaytitle') %></h1>
-      </header>
-      <section>
-        <%= get('text') %>
-      </section>
-    </script>
-    <script type="text/template" id="result-template">
-      <%= get('title') %>
-    </script>
-    <script src="/js/jquery-1.7.2.min.js"></script>
-    <script src="/js/underscore.js"></script>
-    <script src="/js/backbone.js"></script>
-    <script src="/js/tres.js"></script>
-    <script src="/anagen/templates.js"></script>
-    <script src="/anagen/anagen.js"></script>
+    <section id="transpond">
+      <ul id="tech">
+        <li id="html">HTML</li>
+        <li id="js">JS</li>
+        <li id="css">CSS</li>
+      </ul>
+      <svg id="arrow" x="0px" y="0px" width="400px" viewBox="0 0 100 83.641" enable-background="new 0 0 100 83.641" space="preserve" fill="#d5253e">
+        <polygon points="58.263,0.056 100,41.85 58.263,83.641 30.662,83.641 62.438,51.866 0,51.866 0,31.611 62.213,31.611 30.605,0 58.263,0.056 "></polygon>
+      </svg>
+      <ul id="devices">
+        <li>
+          <svg version="1.1" id="ipad" x="0px" y="0px" viewBox="0 0 78 100" enable-background="new 0 0 78 100" space="preserve" fill="#d5253e">
+            <path d="M73,0H5C2.238,0,0,2.239,0,5v90c0,2.762,2.238,5,5,5h68c2.762,0,5-2.238,5-5V5C78,2.239,75.762,0,73,0z M39,98.5c-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c1.382,0,2.5,1.119,2.5,2.5S40.382,98.5,39,98.5z M70.001,90.963c0,0.572-0.464,1.037-1.033,1.037H9.034c-0.569,0-1.033-0.465-1.033-1.037V9.037C8.001,8.464,8.465,8,9.034,8h59.934c0.569,0,1.033,0.464,1.033,1.037V90.963z"></path>
+          </svg>
+        </li>
+        <li>
+          <svg version="1.0" id="iphone" x="0px" y="0px" viewBox="0 0 50.938 100" enable-background="new 0 0 50.938 100" space="preserve" fill="#d5253e">
+            <path d="M43.101,0H7.837C3.509,0,0,3.508,0,7.836v84.327C0,96.491,3.509,100,7.837,100h35.264c4.328,0,7.837-3.509,7.837-7.837V7.836C50.938,3.508,47.429,0,43.101,0z M21.615,8.315h7.708c0.576,0,1.043,0.467,1.043,1.044c0,0.576-0.467,1.043-1.043,1.043h-7.708c-0.577,0-1.044-0.467-1.044-1.043C20.571,8.782,21.038,8.315,21.615,8.315z M17.123,7.915c0.687,0,1.244,0.557,1.244,1.244c0,0.687-0.557,1.244-1.244,1.244c-0.687,0-1.244-0.557-1.244-1.244C15.879,8.472,16.437,7.915,17.123,7.915z M25.469,95.772c-2.705,0-4.898-2.192-4.898-4.897c0-2.706,2.193-4.898,4.898-4.898s4.897,2.192,4.897,4.898C30.366,93.58,28.174,95.772,25.469,95.772z M47.019,82.489h-43.1V17.511h43.1V82.489z"></path>
+          </svg>
+        </li>
+      </ul>
+    </section>
+    <h1>Tres</h1>
+    <p>Just web. Tablets and phones.</p>
+    <p class="smaller">Docs &amp; pretty site coming soon.</p>
   </body>
 </html>
