@@ -91,36 +91,54 @@ h1 {
   margin-bottom: 3.6rem;
 }
 
-/* line 31, ../sass/tres.io.scss */
+/* line 30, ../sass/tres.io.scss */
 p {
   margin: 2.3rem auto;
   font-size: 2.3rem;
 }
-/* line 34, ../sass/tres.io.scss */
+/* line 33, ../sass/tres.io.scss */
 p.smaller {
   font-size: 1.9rem;
 }
 
-/* line 37, ../sass/tres.io.scss */
+/* line 35, ../sass/tres.io.scss */
 h1, p {
   text-shadow: 1px 1px 0 white;
 }
 
+/* line 36, ../sass/tres.io.scss */
+a {
+  color: #d5253e;
+}
 /* line 39, ../sass/tres.io.scss */
+a:visited {
+  color: #d5253e;
+}
+
+/* line 42, ../sass/tres.io.scss */
+footer {
+  margin-top: 4.6rem;
+}
+/* line 44, ../sass/tres.io.scss */
+footer p {
+  font-size: 1.9rem;
+}
+
+/* line 49, ../sass/tres.io.scss */
 #transpond {
   position: relative;
   height: 35rem;
   margin-top: 4rem;
 }
 
-/* line 45, ../sass/tres.io.scss */
+/* line 55, ../sass/tres.io.scss */
 #tech, #devices, #arrow {
   position: absolute;
   top: 20%;
   color: #d5253e;
 }
 
-/* line 51, ../sass/tres.io.scss */
+/* line 61, ../sass/tres.io.scss */
 #arrow {
   -webkit-transform: perspective(0) translate(-50%, 150%);
   -moz-transform: perspective(0) translate(-50%, 150%);
@@ -132,7 +150,7 @@ h1, p {
   width: 5rem;
 }
 
-/* line 58, ../sass/tres.io.scss */
+/* line 68, ../sass/tres.io.scss */
 #tech {
   -webkit-border-radius: 9999em;
   -moz-border-radius: 9999em;
@@ -150,32 +168,32 @@ h1, p {
   border: 1rem solid #d5253e;
   text-align: center;
 }
-/* line 66, ../sass/tres.io.scss */
+/* line 76, ../sass/tres.io.scss */
 #tech li {
   position: absolute;
   font-size: 3.6rem;
   font-weight: 700;
 }
 
-/* line 73, ../sass/tres.io.scss */
+/* line 83, ../sass/tres.io.scss */
 #html {
   top: 25%;
   left: 27%;
 }
 
-/* line 74, ../sass/tres.io.scss */
+/* line 84, ../sass/tres.io.scss */
 #js {
   bottom: 30%;
   left: 15%;
 }
 
-/* line 75, ../sass/tres.io.scss */
+/* line 85, ../sass/tres.io.scss */
 #css {
   bottom: 30%;
   right: 15%;
 }
 
-/* line 77, ../sass/tres.io.scss */
+/* line 87, ../sass/tres.io.scss */
 #devices {
   -webkit-transform: perspective(0) translate(125%, 50%);
   -moz-transform: perspective(0) translate(125%, 50%);
@@ -186,12 +204,12 @@ h1, p {
   color: #d5253e;
   text-align: center;
 }
-/* line 82, ../sass/tres.io.scss */
+/* line 92, ../sass/tres.io.scss */
 #devices li {
   display: inline;
 }
 
-/* line 87, ../sass/tres.io.scss */
+/* line 97, ../sass/tres.io.scss */
 #ipad, #iphone {
   width: 10rem;
   height: 10rem;
