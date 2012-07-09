@@ -1,10 +1,17 @@
 @import 'compass/reset';
 @import 'compass/css3/border-radius';
-@import 'compass/css3/transform';
 
 $hot                  : #d5253e;
 $body-background      : #f8f8f8;
 $default-text-color   : black;
+
+@mixin translate($x, $y) {
+  -webkit-transform : translate($x, $y);
+  -moz-transform    : translate($x, $y);
+  -ms-transform     : translate($x, $y);
+  -o-transform      : translate($x, $y);
+  transform         : translate($x, $y);
+}
 
 html {
   min-height  : 420px;
@@ -59,7 +66,7 @@ footer {
 }
 
 #arrow { 
-  @include translate(-50%, 150%, 0);
+  @include translate(-50%, 150%);
   left   : 50%;
   height : 5rem; 
   width  : 5rem
@@ -67,7 +74,7 @@ footer {
 
 #tech {
   @include border-radius(9999em);
-  @include translate(-125%, 0, 0);
+  @include translate(-125%, 0);
   left       : 50%;
   width      : 20rem;
   height     : 20rem;
@@ -85,7 +92,7 @@ footer {
 #css  { bottom : 30%; right : 15% }
 
 #devices {
-  @include translate(125%, 50%, 0);
+  @include translate(125%, 50%);
   right      : 50%;
   color      : $hot;  
   text-align : center;
