@@ -12,96 +12,61 @@ $default-text-color   : black;
   -o-transform      : translate($x, $y);
   transform         : translate($x, $y);
 }
+@mixin scale($dot) {
+  -webkit-transform : scale($dot);
+  -moz-transform    : scale($dot);
+  -ms-transform     : scale($dot);
+  -o-transform      : scale($dot);
+  transform         : scale($dot);
+}
 
 html {
-  min-height  : 420px;
-  font-size   : 62.5%;
+  min-height : 420px;
+  font-size  : 62.5%;
 }
+
 body {
+  padding : 15% 0;
   font-size   : 1.5rem;
-  line-height : 2.3rem;
+  line-height : 2.6rem;
   background  : $body-background;
   font-family : 'museo-sans-rounded', 'Helvetica';
-  &>* {
-    width      : 90rem;
-    margin     : 0 auto;
-    text-align : center;
-  }
+  overflow-x  : hidden;
+  text-align  : center;
+  text-shadow: 1px 1px 0 white
 }
 h1 { 
   font-size      : 5rem;
   font-weight    : 700;
-  text-transform : uppercase;
   margin-bottom  : 3.6rem;
 }
 p {
-  margin    : 2.3rem auto;
+  margin    : 1.9rem 0;
   font-size : 2.3rem;
-  &.smaller { font-size : 1.9rem }
 }
-h1, p { text-shadow: 1px 1px 0 white }
+code {
+  padding : 0.1rem 0.25rem;
+  background : darken(white, 10%);
+  pre & {
+    display : block;
+    padding : 1rem 2.3rem
+  }
+}
 a { 
-  color : $hot;
-  // text-decoration :;
+  color           : $hot;
+  text-decoration : none;
+  &:hover   { text-decoration : underline }
   &:visited { color : $hot }
 }
-
-footer {
-  margin-top : 4.6rem;
-  p {
-    font-size : 1.9rem;
-  }
+header {
+  margin-bottom : 9.2rem;
+  h1 { margin-top : 2.6rem }
 }
 
-#transpond {
-  position : relative;
-  height   : 35rem;
-  margin-top : 4rem;
-}
-
-#tech, #devices, #arrow { 
-  position : absolute; 
-  top      : 20%;
-  color    : $hot;
-}
-
-#arrow { 
-  @include translate(-50%, 150%);
-  left   : 50%;
-  height : 5rem; 
-  width  : 5rem
-}
-
-#tech {
-  @include border-radius(9999em);
-  @include translate(-125%, 0);
-  left       : 50%;
-  width      : 20rem;
-  height     : 20rem;
-  border     : 1rem solid $hot;
-  text-align : center;
-  li {
-    position    : absolute;
-    font-size   : 3.6rem;
-    font-weight : 700;
-  } 
-}
-
-#html { top : 25%; left : 27% }
-#js   { bottom : 30%; left : 15% }
-#css  { bottom : 30%; right : 15% }
-
-#devices {
-  @include translate(125%, 50%);
-  right      : 50%;
-  color      : $hot;  
-  text-align : center;
-  li {
-    display : inline
-  }
-}
-
-#ipad, #iphone {
-  width   : 10rem;
-  height  : 10rem;
+body > section {
+  width      : 90rem;
+  margin     : 0 auto 4.6rem;
+  text-align : left;
+  h1  { font-size : 3.3rem }
+  p   { font-size : 1.9rem }
 }

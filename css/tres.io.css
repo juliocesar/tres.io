@@ -63,154 +63,82 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 16, ../sass/tres.io.scss */
+/* line 23, ../sass/tres.io.scss */
 html {
   min-height: 420px;
   font-size: 62.5%;
 }
 
-/* line 20, ../sass/tres.io.scss */
+/* line 28, ../sass/tres.io.scss */
 body {
+  padding: 15% 0;
   font-size: 1.5rem;
-  line-height: 2.3rem;
+  line-height: 2.6rem;
   background: #f8f8f8;
   font-family: 'museo-sans-rounded', 'Helvetica';
-}
-/* line 25, ../sass/tres.io.scss */
-body > * {
-  width: 90rem;
-  margin: 0 auto;
+  overflow-x: hidden;
   text-align: center;
-}
-
-/* line 31, ../sass/tres.io.scss */
-h1 {
-  font-size: 5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 3.6rem;
-}
-
-/* line 37, ../sass/tres.io.scss */
-p {
-  margin: 2.3rem auto;
-  font-size: 2.3rem;
-}
-/* line 40, ../sass/tres.io.scss */
-p.smaller {
-  font-size: 1.9rem;
-}
-
-/* line 42, ../sass/tres.io.scss */
-h1, p {
   text-shadow: 1px 1px 0 white;
 }
 
+/* line 38, ../sass/tres.io.scss */
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 3.6rem;
+}
+
 /* line 43, ../sass/tres.io.scss */
+p {
+  margin: 1.9rem 0;
+  font-size: 2.3rem;
+}
+
+/* line 47, ../sass/tres.io.scss */
+code {
+  padding: 0.1rem 0.25rem;
+  background: #e6e6e6;
+}
+/* line 50, ../sass/tres.io.scss */
+pre code {
+  display: block;
+  padding: 1rem 2.3rem;
+}
+
+/* line 55, ../sass/tres.io.scss */
 a {
   color: #d5253e;
+  text-decoration: none;
 }
-/* line 46, ../sass/tres.io.scss */
+/* line 58, ../sass/tres.io.scss */
+a:hover {
+  text-decoration: underline;
+}
+/* line 59, ../sass/tres.io.scss */
 a:visited {
   color: #d5253e;
 }
 
-/* line 49, ../sass/tres.io.scss */
-footer {
-  margin-top: 4.6rem;
+/* line 61, ../sass/tres.io.scss */
+header {
+  margin-bottom: 9.2rem;
 }
-/* line 51, ../sass/tres.io.scss */
-footer p {
+/* line 63, ../sass/tres.io.scss */
+header h1 {
+  margin-top: 2.6rem;
+}
+
+/* line 66, ../sass/tres.io.scss */
+body > section {
+  width: 90rem;
+  margin: 0 auto 4.6rem;
+  text-align: left;
+}
+/* line 70, ../sass/tres.io.scss */
+body > section h1 {
+  font-size: 3.3rem;
+}
+/* line 71, ../sass/tres.io.scss */
+body > section p {
   font-size: 1.9rem;
-}
-
-/* line 56, ../sass/tres.io.scss */
-#transpond {
-  position: relative;
-  height: 35rem;
-  margin-top: 4rem;
-}
-
-/* line 62, ../sass/tres.io.scss */
-#tech, #devices, #arrow {
-  position: absolute;
-  top: 20%;
-  color: #d5253e;
-}
-
-/* line 68, ../sass/tres.io.scss */
-#arrow {
-  -webkit-transform: translate(-50%, 150%);
-  -moz-transform: translate(-50%, 150%);
-  -ms-transform: translate(-50%, 150%);
-  -o-transform: translate(-50%, 150%);
-  transform: translate(-50%, 150%);
-  left: 50%;
-  height: 5rem;
-  width: 5rem;
-}
-
-/* line 75, ../sass/tres.io.scss */
-#tech {
-  -webkit-border-radius: 9999em;
-  -moz-border-radius: 9999em;
-  -ms-border-radius: 9999em;
-  -o-border-radius: 9999em;
-  border-radius: 9999em;
-  -webkit-transform: translate(-125%, 0);
-  -moz-transform: translate(-125%, 0);
-  -ms-transform: translate(-125%, 0);
-  -o-transform: translate(-125%, 0);
-  transform: translate(-125%, 0);
-  left: 50%;
-  width: 20rem;
-  height: 20rem;
-  border: 1rem solid #d5253e;
-  text-align: center;
-}
-/* line 83, ../sass/tres.io.scss */
-#tech li {
-  position: absolute;
-  font-size: 3.6rem;
-  font-weight: 700;
-}
-
-/* line 90, ../sass/tres.io.scss */
-#html {
-  top: 25%;
-  left: 27%;
-}
-
-/* line 91, ../sass/tres.io.scss */
-#js {
-  bottom: 30%;
-  left: 15%;
-}
-
-/* line 92, ../sass/tres.io.scss */
-#css {
-  bottom: 30%;
-  right: 15%;
-}
-
-/* line 94, ../sass/tres.io.scss */
-#devices {
-  -webkit-transform: translate(125%, 50%);
-  -moz-transform: translate(125%, 50%);
-  -ms-transform: translate(125%, 50%);
-  -o-transform: translate(125%, 50%);
-  transform: translate(125%, 50%);
-  right: 50%;
-  color: #d5253e;
-  text-align: center;
-}
-/* line 99, ../sass/tres.io.scss */
-#devices li {
-  display: inline;
-}
-
-/* line 104, ../sass/tres.io.scss */
-#ipad, #iphone {
-  width: 10rem;
-  height: 10rem;
 }
