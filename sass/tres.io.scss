@@ -33,7 +33,10 @@ body {
   font-family : 'museo-sans-rounded', 'Helvetica';
   overflow-x  : hidden;
   text-align  : center;
-  text-shadow: 1px 1px 0 white
+  text-shadow: 1px 1px 0 white;
+  @media screen and (max-width: 900px) {
+    padding : 15% 1.3rem;
+  }
 }
 h1 { 
   font-size      : 5rem;
@@ -69,4 +72,16 @@ body > section {
   text-align : left;
   h1  { font-size : 3.3rem }
   p   { font-size : 1.9rem }
+  @media screen and (max-width : 900px) {
+    width : auto;
+  }
+  @media screen and (max-width : 500px) {
+    margin : 0 0 3.3rem;
+    h1 { font-size : 3rem; margin-bottom: 1.6rem }
+    p  { font-size : 1.6rem }
+    pre code {
+      padding   : 1rem;
+      font-size : 85%;
+    }
+  }
 }

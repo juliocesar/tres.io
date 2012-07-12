@@ -80,65 +80,97 @@ body {
   text-align: center;
   text-shadow: 1px 1px 0 white;
 }
+@media screen and (max-width: 900px) {
+  /* line 28, ../sass/tres.io.scss */
+  body {
+    padding: 15% 1.3rem;
+  }
+}
 
-/* line 38, ../sass/tres.io.scss */
+/* line 41, ../sass/tres.io.scss */
 h1 {
   font-size: 5rem;
   font-weight: 700;
   margin-bottom: 3.6rem;
 }
 
-/* line 43, ../sass/tres.io.scss */
+/* line 46, ../sass/tres.io.scss */
 p {
   margin: 1.9rem 0;
   font-size: 2.3rem;
 }
 
-/* line 47, ../sass/tres.io.scss */
+/* line 50, ../sass/tres.io.scss */
 code {
   padding: 0.1rem 0.25rem;
   background: #e6e6e6;
 }
-/* line 50, ../sass/tres.io.scss */
+/* line 53, ../sass/tres.io.scss */
 pre code {
   display: block;
   padding: 1rem 2.3rem;
 }
 
-/* line 55, ../sass/tres.io.scss */
+/* line 58, ../sass/tres.io.scss */
 a {
   color: #d5253e;
   text-decoration: none;
 }
-/* line 58, ../sass/tres.io.scss */
+/* line 61, ../sass/tres.io.scss */
 a:hover {
   text-decoration: underline;
 }
-/* line 59, ../sass/tres.io.scss */
+/* line 62, ../sass/tres.io.scss */
 a:visited {
   color: #d5253e;
 }
 
-/* line 61, ../sass/tres.io.scss */
+/* line 64, ../sass/tres.io.scss */
 header {
   margin-bottom: 9.2rem;
 }
-/* line 63, ../sass/tres.io.scss */
+/* line 66, ../sass/tres.io.scss */
 header h1 {
   margin-top: 2.6rem;
 }
 
-/* line 66, ../sass/tres.io.scss */
+/* line 69, ../sass/tres.io.scss */
 body > section {
   width: 90rem;
   margin: 0 auto 4.6rem;
   text-align: left;
 }
-/* line 70, ../sass/tres.io.scss */
+/* line 73, ../sass/tres.io.scss */
 body > section h1 {
   font-size: 3.3rem;
 }
-/* line 71, ../sass/tres.io.scss */
+/* line 74, ../sass/tres.io.scss */
 body > section p {
   font-size: 1.9rem;
+}
+@media screen and (max-width : 900px) {
+  /* line 69, ../sass/tres.io.scss */
+  body > section {
+    width: auto;
+  }
+}
+@media screen and (max-width : 500px) {
+  /* line 69, ../sass/tres.io.scss */
+  body > section {
+    margin: 0 0 3.3rem;
+  }
+  /* line 80, ../sass/tres.io.scss */
+  body > section h1 {
+    font-size: 3rem;
+    margin-bottom: 1.6rem;
+  }
+  /* line 81, ../sass/tres.io.scss */
+  body > section p {
+    font-size: 1.6rem;
+  }
+  /* line 82, ../sass/tres.io.scss */
+  body > section pre code {
+    padding: 1rem;
+    font-size: 85%;
+  }
 }
