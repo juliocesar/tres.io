@@ -85,3 +85,9 @@ body > section {
     }
   }
 }
+
+#video {
+  text-align : center;
+  h1, p { text-align : left }
+  iframe { width : 600px; height : 330px }
+}

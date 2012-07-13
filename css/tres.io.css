@@ -174,3 +174,17 @@ body > section p {
     font-size: 85%;
   }
 }
+
+/* line 89, ../sass/tres.io.scss */
+#video {
+  text-align: center;
+}
+/* line 91, ../sass/tres.io.scss */
+#video h1, #video p {
+  text-align: left;
+}
+/* line 92, ../sass/tres.io.scss */
+#video iframe {
+  width: 600px;
+  height: 330px;
+}
