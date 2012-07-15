@@ -52,6 +52,77 @@
         considerably easier then.
       </p>
     </section>
+    <section id="how-to-use">
+      <h1>How to use</h1>
+      <p>The simplest Tres app looks like this:</p>
+      <pre><code>class HomeScreen extends Tres.Screen
+  template : _.template('&lt;h1&gt;Hello there&lt;/h1&gt;')
+
+$ ->
+  App = new Tres.App
+  App.on '' : new HomeScreen
+
+  App.boot()</code></pre>
+    <p>
+      The workflow follows much of this recipe: subclass from <code>Tres.Screen</code>,
+      declare a template which holds the markup for a screen, and optionally define what
+      happens in a screen.
+    </p>
+    <p>
+      Tres provides a few classes for making common patterns easy to implement.
+    </p>
+    </section>
+    <section id="cookbook">
+      <h1>The cookbook</h1>
+      <p>
+        I'll keep a list of recipes for developing using Tres here. Check back regularly
+        for updates.
+      </p>
+      <section id="general">
+        <h2>General</h2>
+        <p class="question">Q: How do I make a Tres app?</p>
+        <p>
+          A: First, follow the instructions from the <a href="#install">install section</a>.
+        </p>
+        <p>
+          You can write a simple app following the recipe right at the start of the
+          <a href="#how-to-use">how to use</a> section. The idea is this:
+        </p>
+        <pre><code>class Home extends Tres.Screen
+class About extends Tres.Screen
+
+$ ->
+  App = new Tres.App
+  App.on
+    ''        : new Home   # Home URL
+    '/about'  : new About  # About page URL</code></pre>
+      <p>
+        The method <code>App.on</code> takes an object, which is used to map URLs to
+        the screen objects your app has.
+      </p>
+      </section>
+      <section id="tres-screen">
+        <h2>Tres.Screen</h2>
+        <p class="question">Q: How do I navigate to another screen?</p>
+        <p>
+          A: add a regular &lt;a&gt; tag to it's URL. Tres screen objects will automatically
+          bind links you add in a screen's template.
+        </p>
+        <p>For instance:</p>
+        <pre><code>class Home extends Tres.Screen
+  template : _.template('&lt;a href="about"&gt;Go to about&lt;a/&gt;')
+class About extends Tres.Screen
+
+$ ->
+  App = new Tres.App
+  App.on
+    ''      : new Home
+    'about' : new About
+
+  App.boot()</code></pre>
+      <p>Tapping the link on that page will have the app transition to the About screen.</p>
+      </section>
+    </section>
     <section id="contributing">
       <h1>Contributing</h1>
       <p>
