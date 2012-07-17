@@ -105,7 +105,7 @@ $ ->
         <h2>Tres.Screen</h2>
         <p class="question">Q: How do I navigate to another screen?</p>
         <p>
-          A: add a regular &lt;a&gt; tag to it's URL. Tres screen objects will automatically
+          A: Add a regular &lt;a&gt; tag to it's URL. Tres screen objects will automatically
           bind links you add in a screen's template.
         </p>
         <p>For instance:</p>
@@ -120,7 +120,39 @@ $ ->
     'about' : new About
 
   App.boot()</code></pre>
-      <p>Tapping the link on that page will have the app transition to the About screen.</p>
+        <p>Tapping the link on that page will have the app transition to the About screen.</p>
+        <p class="question">Q: How do I fetch data from inside a screen?</p>
+        <p>
+          A: Initialize the screen object by associating a collection with it first, then when
+          the screen activates, call <code>fetch</code> on the collection.
+        </p>
+        <pre><code>
+class BooksCollection extends Backbone.Collection
+class BooksScreen extends Tres.Screen
+  template    : JST['books/list']
+  initialize  : ->
+    super
+    @collection.on 'reset', @addAll, @
+  addAll : ->
+    $list = @$el.find('ul')
+    $list.empty()
+    @collection.each (model) =>
+      $list.append @make('li', {}, model.get('title'))
+  active      : ->
+    @collection.fetch()
+
+$ ->
+  App = new Tres.App
+  List = new BooksScreen(collection : new BooksCollection)
+
+  App.on '/books' : List</code></pre>
+        <p>
+          The <code>active</code> method is a callback that gets called when the screen
+          appears.
+        </p>
+        <p>
+          The previous example can be made a lot simpler with a <a href="#tres-list">Tres.List</a>.
+        </p>
       </section>
     </section>
     <section id="contributing">
