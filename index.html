@@ -129,8 +129,8 @@ $ ->
         <pre><code>
 class BooksCollection extends Backbone.Collection
 class BooksScreen extends Tres.Screen
-  template    : JST['books/list']
-  initialize  : ->
+  template : JST['books/list']
+  initialize : ->
     super
     @collection.on 'reset', @addAll, @
   addAll : ->
@@ -138,7 +138,7 @@ class BooksScreen extends Tres.Screen
     $list.empty()
     @collection.each (model) =>
       $list.append @make('li', {}, model.get('title'))
-  active      : ->
+  active : ->
     @collection.fetch()
 
 $ ->
@@ -152,6 +152,36 @@ $ ->
         </p>
         <p>
           The previous example can be made a lot simpler with a <a href="#tres-list">Tres.List</a>.
+        </p>
+      </section>
+      <section id="tres-list">
+        <h2>Tres.List</h2>
+        <p class="question">R: Making life easier with Tres.List</p>
+        <p>
+          Clickable lists is a really popular pattern in mobile development. It's almost 
+          certain that whatever app you're developing will have at least one of those.
+        </p>
+        <p>
+          Tres offers a class for connecting a <code>Backbone.Collection</code> to a list
+          with a simple configurable declaration.
+        </p>
+        <p>
+          Take the previous example. The <code>BookScreen</code> class could be rewritten
+          as such, and have the same effect (with a few pluses even):
+        </p>
+        <pre><code>class BooksScreen extends Tres.Screen
+  template : JST['books/list']
+  active : ->
+    @list ?= new Tres.List(collection : @collection, el : @$el.find('ul'))
+    @collection.fetch()</code></pre>
+        <p>
+          A <code>Tres.List</code> constructor takes 3 arguments (the last one is optional):
+          a collection that will populate the list, the list element itself (generally a 
+          <code>&lt;ul&gt;</code>), and the parameters for a <code>Tres.ListEntry</code>.
+        </p>
+        <p>
+          The latter is only necessary in case you want to make lists clickable, or define
+          the template for a list entry, or customise it in any other way.
         </p>
       </section>
     </section>
