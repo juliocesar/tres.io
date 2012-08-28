@@ -33,167 +33,18 @@
       </p>
       <iframe src="http://player.vimeo.com/video/45383550?portrait=0&amp;color=ff0179" width="600" height="381" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     </section>
-    <section id="install">
-      <h1>Installation</h1>
-      <p>
-        Downloads are <a href="https://github.com/juliocesar/tres/downloads">hosted on GitHub</a>.
-      </p>
-      <p>
-        In the zip file, you'll find <code>tres.js</code> along with it's dependencies in the
-        <code>js/</code> folder. Make sure you include all of those in your application.
-      </p>
-      <p>
-        Base styles and the default theme can be found in the <code>css/</code> folder also in
-        the zip file. You don't need to use the default theme of course, though I highly recommend
-        you include <code>css/tres/base.css</code> at least.
-      </p>
-      <p>
-        A packaging system as well as a development environment is underway. This will get
-        considerably easier then.
-      </p>
-    </section>
-    <section id="how-to-use">
-      <h1>How to use</h1>
-      <p>The simplest Tres app looks like this:</p>
-      <pre><code>class HomeScreen extends Tres.Screen
-  template : _.template('&lt;h1&gt;Hello there&lt;/h1&gt;')
-
-$ ->
-  App = new Tres.App
-  App.on '' : new HomeScreen
-
-  App.boot()</code></pre>
-    <p>
-      The workflow follows much of this recipe: subclass from <code>Tres.Screen</code>,
-      declare a template which holds the markup for a screen, and optionally define what
-      happens in a screen.
-    </p>
-    <p>
-      Tres provides a few classes for making common patterns easy to implement.
-    </p>
-    </section>
     <section id="cookbook">
-      <h1>The cookbook</h1>
+      <h1>The Cookbook</h1>
       <p>
-        I'll keep a list of recipes for developing using Tres here. Check back regularly
-        for updates.
+        You can find information on how to use Tres in the
+        <a href="http://tres-cookbook.heroku.com">Cookbook</a>.
       </p>
-      <section id="general">
-        <h2>General</h2>
-        <p class="question">Q: How do I make a Tres app?</p>
-        <p>
-          A: First, follow the instructions from the <a href="#install">install section</a>.
-        </p>
-        <p>
-          You can write a simple app following the recipe right at the start of the
-          <a href="#how-to-use">how to use</a> section. The idea is this:
-        </p>
-        <pre><code>class Home extends Tres.Screen
-class About extends Tres.Screen
-
-$ ->
-  App = new Tres.App
-  App.on
-    ''        : new Home   # Home URL
-    '/about'  : new About  # About page URL</code></pre>
-      <p>
-        The method <code>App.on</code> takes an object, which is used to map URLs to
-        the screen objects your app has.
-      </p>
-      </section>
-      <section id="tres-screen">
-        <h2>Tres.Screen</h2>
-        <p class="question">Q: How do I navigate to another screen?</p>
-        <p>
-          A: Add a regular &lt;a&gt; tag to it's URL. Tres screen objects will automatically
-          bind links you add in a screen's template.
-        </p>
-        <p>For instance:</p>
-        <pre><code>class Home extends Tres.Screen
-  template : _.template('&lt;a href="about"&gt;Go to about&lt;a/&gt;')
-class About extends Tres.Screen
-
-$ ->
-  App = new Tres.App
-  App.on
-    ''      : new Home
-    'about' : new About
-
-  App.boot()</code></pre>
-        <p>Tapping the link on that page will have the app transition to the About screen.</p>
-        <p class="question">Q: How do I fetch data from inside a screen?</p>
-        <p>
-          A: Initialize the screen object by associating a collection with it first, then when
-          the screen activates, call <code>fetch</code> on the collection.
-        </p>
-        <pre><code>
-class BooksCollection extends Backbone.Collection
-class BooksScreen extends Tres.Screen
-  template : JST['books/list']
-  initialize : ->
-    super
-    @collection.on 'reset', @addAll, @
-  addAll : ->
-    $list = @$el.find('ul')
-    $list.empty()
-    @collection.each (model) =>
-      $list.append @make('li', {}, model.get('title'))
-  active : ->
-    @collection.fetch()
-
-$ ->
-  App = new Tres.App
-  List = new BooksScreen(collection : new BooksCollection)
-
-  App.on '/books' : List</code></pre>
-        <p>
-          The <code>active</code> method is a callback that gets called when the screen
-          appears.
-        </p>
-        <p>
-          The previous example can be made a lot simpler with a <a href="#tres-list">Tres.List</a>.
-        </p>
-      </section>
-      <section id="tres-list">
-        <h2>Tres.List</h2>
-        <p class="question">R: Making life easier with Tres.List</p>
-        <p>
-          Clickable lists is a really popular pattern in mobile development. It's almost 
-          certain that whatever app you're developing will have at least one of those.
-        </p>
-        <p>
-          Tres offers a class for connecting a <code>Backbone.Collection</code> to a list
-          with a simple configurable declaration.
-        </p>
-        <p>
-          Take the previous example. The <code>BookScreen</code> class could be rewritten
-          as such, and have the same effect (with a few pluses even):
-        </p>
-        <pre><code>class BooksScreen extends Tres.Screen
-  template : JST['books/list']
-  active : ->
-    @list ?= new Tres.List(collection : @collection, el : @$el.find('ul'))
-    @collection.fetch()</code></pre>
-        <p>
-          A <code>Tres.List</code> constructor takes 3 arguments (the last one is optional):
-          a collection that will populate the list, the list element itself (generally a 
-          <code>&lt;ul&gt;</code>), and the parameters for a <code>Tres.ListEntry</code>.
-        </p>
-        <p>
-          The latter is only necessary in case you want to make lists clickable, or define
-          the template for a list entry, or customise it in any other way.
-        </p>
-      </section>
     </section>
     <section id="contributing">
       <h1>Contributing</h1>
       <p>
         If you're a brave soul and would like to contribute to this project, the source is
         hosted on <a href="http://github.com/juliocesar/tres">GitHub</a>.
-      </p>
-      <p>
-        But until things take a little more shape, I'd strongly advise you against it unless
-        it's for curiosity sake.
       </p>
     </section>
     <section id="author">
